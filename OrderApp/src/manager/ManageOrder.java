@@ -19,6 +19,12 @@ import util.Validation;
 public class ManageOrder {
 
     public static void createNewOrder(ArrayList<Order> OL, ArrayList<Product> PL) {
+        if (PL.isEmpty()) {
+            System.out.println();
+            System.out.println("Please add product to create order");
+            return;
+
+        }
         System.out.println();
 
         String id;
@@ -96,9 +102,7 @@ public class ManageOrder {
             System.out.println("-------------------------------------------------------");
             System.out.printf("%-10s %-15s %-10s %-10s %-10s\n", "ID", "Name", "Price", "Quantity", "Subtotal");
 
-            for (OrderDetail or : orderDetails) {
-                System.out.println(or.toString());
-            }
+            order.toString() ; 
 
             System.out.println("-------------------------------------------------------");
             System.out.printf("                    TOTAL PAY: %.2fVND\n", order.getTotalPrice());
@@ -117,7 +121,7 @@ public class ManageOrder {
 
     public static void deteleOrderById(ArrayList<Order> OL) {
         if (OL.isEmpty()) {
-            System.out.println("List order is empty. Please order after that can see list order ");
+            System.out.println("List order is empty. Please order after that can delete list order ");
             System.out.println();
         } else {
             System.out.println();
@@ -157,9 +161,15 @@ public class ManageOrder {
     }
 
     public static void printAllOrder(ArrayList<Order> OL) {
-        for (Order order : OL) {
-            printOrder(order);
+        if (OL.isEmpty()) {
+            System.out.println("List order is empty. Please order after that can see list order ");
+            System.out.println();
+        } else {
+            for (Order order : OL) {
+                printOrder(order);
+            }
         }
+
     }
 
     public static void exportInvoiceToFile(Order order) {
@@ -211,7 +221,7 @@ public class ManageOrder {
                     return;
                 }
             }
-            System.out.println("Can not find ỏder ID.");
+            System.out.println("Can not find order ID.");
         }
     }
 
