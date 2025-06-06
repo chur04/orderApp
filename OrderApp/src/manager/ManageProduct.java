@@ -25,11 +25,12 @@ public class ManageProduct {
         System.out.println("    3. Display List Product");
         System.out.println("    4. Sort product by price");
         System.out.println("    5. Delete product by ID");
-        System.out.println("    6. Order Product and Export Invoice");
-        System.out.println("    7. Print List Order");
-        System.out.println("    8. Delete Order By ID");
-        System.out.println("    9. Update Order By ID");
-        System.out.println("    10. Exit");
+        System.out.println("    6. Order Product");
+        System.out.println("    7. Export Order");
+        System.out.println("    8. Print List Order");
+        System.out.println("    9. Delete Order By ID");
+        System.out.println("    10. Update Order By ID");
+        System.out.println("    11. Exit");
         System.out.println("===================");
         System.out.print("Enter your choice: ");
 
@@ -111,7 +112,6 @@ public class ManageProduct {
             for (Product product : PL) {
                 System.out.println(product.toString());
             }
-
         }
     }
     
@@ -126,11 +126,11 @@ public class ManageProduct {
                     PL.remove(product) ; 
                     System.out.println();
                     System.out.println("====Delete Successfully====");
-                    break ; 
+                    return  ; 
                 }
             }
-            System.out.println("Can not delete cause ID is not valid! ");
             
+            System.out.println("Can not delete cause ID is not valid! ");
         }
     }
 }

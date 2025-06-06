@@ -18,7 +18,7 @@ public class Main {
         ArrayList<Order> OL = new ArrayList<Order>();
         while (true) {
             ManageProduct.showMenu();
-            int choice = Validation.checkInputInt(1, 10);
+            int choice = Validation.checkInputInt(1, 11);
             switch (choice) {
                 case 1:
                     ManageProduct.createNewProduct(PL);
@@ -46,17 +46,23 @@ public class Main {
                     break ; 
                     
                 case 7:
-                    ManageOrder.printAllOrder(OL);
+                    ManageOrder.exportInvoiceByID(OL);
                     break ; 
                     
                     
                 case 8 : 
+                    ManageOrder.printAllOrder(OL);
                     break ; 
                     
                 case 9 : 
+                    ManageOrder.deteleOrderById(OL);
                     break ; 
                     
                 case 10: 
+                    ManageOrder.updateOrderByOrderID(OL , PL);
+                    break ; 
+                    
+                case 11: 
                     return ; 
                     
 
